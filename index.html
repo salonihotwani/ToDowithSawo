@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Todo with Sawo</title>
+</head>
+<body>
+  
+  <div class="sawologincontainer">
+  <div id="sawo-container" style="height: 300px; width: 300px;"></div>
+  <div id="status"></div>
+  </div>
+  <script src="https://websdk.sawolabs.com/sawo.min.js"></script>
+  <script>
+      var config = {
+          containerID: "sawo-container",
+          identifierType: "email", // can be either 'email' or 'phone_number_sms'
+          apiKey: "c457afbe-99f4-4a63-be32-87964b98e5c6", // add your api key here
+          onSuccess: (payload) => {
+              location.href="index2.html";
+          },
+      };
+      var sawo = new Sawo(config);
+      sawo.showForm();
+  </script>
+</body>
+</html>
